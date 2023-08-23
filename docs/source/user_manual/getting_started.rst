@@ -1,4 +1,4 @@
-How to use ChemPlot
+How to use Chemical Price Research
 ===================
 
 ChemPlot is a cheminformatics tool whose purpose is to visualize subsets of the 
