@@ -1,22 +1,23 @@
-Baptou-bapt!
+Chemical Price Research
 ===================================
 
-**Lumache** (/lu'make/) is a Python library for cooks and food lovers
-that creates recipes mixing random ingredients.
-It pulls data from the `Open Food Facts database <https://world.openfoodfacts.org/>`_
-and offers a *simple* and *intuitive* API.
+**Date**: |today| **Version**: |version|
 
-Check out the :doc:`usage` section for further information, including
-how to :ref:`installation` the project.
+This Python library enables the search for molecule prices 
+from three distinct integrators: Molport, ChemSpace, and MCule, 
+using their corresponding SMILES (Simplified Molecular Input Line Entry System) 
+notation.
 
-.. note::
-
-   This project is under active development.
-
-Contents
---------
+This guide explains the functions of this library.
 
 .. toctree::
+   :maxdepth: 2
+   :caption: User Manual:
+   
+   user_manual/installation
+   user_manual/getting_started
 
-   usage
+.. toctree::
+   :caption: API Reference:
+
    api
