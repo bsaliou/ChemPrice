@@ -50,79 +50,76 @@ To check the status of each key that has been returned to the class, run the :
     
     pc.status()
 
-.. raw:: html
+Possible Outputs
 
-   <div style="border: 1px solid #f0f0f0; background-color: #f9f9f9; padding: 20px; border-radius: 5px;">
+.. code:: python3
 
-Possible Outputs:
-------------------
+    # Username/Password and API Key are Set:
+    Status: Molport: both credentials are set.
 
-1. **Username/Password and API Key are Set:**
+    # Only Username/Password or API Key is Set:
+    Status: Molport: credential is set.
 
-   - Status: Molport: both credentials are set.
+    # No Credential is Set:
+    Status: Molport: no credential is set.
 
-2. **Only Username/Password or API Key is Set:**
-
-   - Status: Molport: credential is set.
-
-3. **No Credential is Set:**
-
-   - Status: Molport: no credential is set.
-
-   </div>
-
-Check the validity of identifiers
+Price search
 --------------------
 
-To now visualize the chemical space of the dataset we use :mod:`visualize_plot()`.
+Before starting the price search, check the validity of the api keys entered. 
 
 .. code:: python3
 
-    import matplotlib.pyplot as plt
+    pc.check()
 
-    cp.visualize_plot()
-    
-.. image:: images/gs_tsne.png
-   :width: 600
-
-The second figure shows the results obtained by reducing the dimensions of features Principal Component Analysis (PCA) [3]_.
+Possible Outputs:
 
 .. code:: python3
 
-    cp.pca()
-    cp.visualize_plot()
+    # API Key is Set and correct:
+    Check: Molport api key is correct.
 
-.. image:: images/gs_pca.png
-   :width: 600
+    # API Key is Set but not correct:
+    Check: Molport api key is incorrect.
 
-The third figure shows the results obtained by reducing the dimensions of features by UMAP [4]_.
+If the identifiers checked are correct, then it's possible 
+to run the method :mod:`collect()` to obtain all the information 
+found on the molecule. The price is given in USD according to 
+the units and quantity entered by the vendor. The units of measurement 
+for quantities are categorized into three families: moles, grams, and liters.
 
 .. code:: python3
 
-    cp.umap()
-    cp.visualize_plot()
+    all_prices = pc.collect()
 
-.. image:: images/gs_umap.png
-   :width: 600
+The output will be a dataframe containing all price information about the molecule.
 
-In each figure the molecules are coloured by class value. 
++-----------------------+---------+-----------------------+--------+--------+---------+-----------+
+| Input Smiles          | Source  | Supplier Name         | Purity | Amount | Measure | Price_USD |
++=======================+=========+=======================+========+========+=========+===========+
+| CC(=O)NC1=CC=C(C=C1)O | Molport | "ChemDiv, Inc."       | >90    | 100    | mg      | 407.1     |
++-----------------------+---------+-----------------------+--------+--------+---------+-----------+
+| CC(=O)NC1=CC=C(C=C1)O | Molport | MedChemExpress Europe | 98.83  | 10     | g       | 112.8     |
++-----------------------+---------+-----------------------+--------+--------+---------+-----------+
+| CC(=O)NC1=CC=C(C=C1)O | Molport | TargetMol Chemicals   | 100.0  | 500    | mg      | 50.0      |
++-----------------------+---------+-----------------------+--------+--------+---------+-----------+
 
+With the :mod:`selectBest()` function, you can keep only the best prices for each molecule. 
+In fact, for each unit of measurement (mol gram and liter) the results are compared 
+to find the best quantity/price ratio. 
 
-.. _`RDKit chemistry framework`: http://www.rdkit.org
+.. code:: python3
 
---------------
+    pc.selectBest(all_prices)
 
-.. raw:: html
+The output will be a dataframe containing only the best quantity/price ratio about each molecule.
 
-   <h3>
-
-References:
-
-.. raw:: html
-
-    </h3>
-    
-.. [1] **Martins, Ines Filipa, et al.** (2012). `A Bayesian approach to in silico blood-brain barrier penetration modeling. <https://pubmed.ncbi.nlm.nih.gov/22612593/>`__ Journal of chemical information and modeling 52.6, 1686-1697
-.. [2] **van der Maaten, Laurens, Hinton, Geoffrey.** (2008). `Viualizingdata using t-SNE. <https://www.jmlr.org/papers/volume9/vandermaaten08a/vandermaaten08a.pdf?fbclid=IwAR0Bgg1eA5TFmqOZeCQXsIoL6PKrVXUFaskUKtg6yBhVXAFFvZA6yQiYx-M>`__ Journal of Machine Learning Research. 9. 2579-2605.
-.. [3] **Wold, S., Esbensen, K., Geladi, P.** (1987). `Principal component analysis. <https://www.sciencedirect.com/science/article/abs/pii/0169743987800849>`__ Chemometrics and intelligent laboratory systems. 2(1-3). 37-52.
-.. [4] **McInnes, L., Healy, J., Melville, J.** (2018). `Umap: Uniform manifold approximation and projection for dimension reduction. <https://arxiv.org/abs/1802.03426>`__ arXivpreprint arXiv:1802.03426.
++-----------------------+---------+---------------------+--------+--------+----------+-----------+--------+--------------------+
+| Input Smiles          | Source  | Supplier Name       | Purity | Amount | Measure  | Price_USD | USD/g  | USD/mol            |
++=======================+=========+=======================+======+========+==========+===========+========+====================+
+| CC(=O)NC1=CC=C(C=C1)O | Molport | Cayman Europe       | >=98   | 500    | g        | 407.1     | 0.22   |                    |
++-----------------------+---------+---------------------+--------+--------+----------+-----------+--------+--------------------+
+| O=C(C)Oc1ccccc1C(=O)O | Molport | Cayman Europe       | >=90   | 500    | g        | 112.8     | 0.1606 |                    |
++-----------------------+---------+---------------------+--------+--------+----------+-----------+--------+--------------------+
+| O=C(C)Oc1ccccc1C(=O)O | Molport | Life Chemicals Inc. | >90    | 20     | micromol | 50.0      |        | 3950000.0000000005 |
++-----------------------+---------+---------------------+--------+--------+----------+-----------+--------+--------------------+
