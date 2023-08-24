@@ -5,14 +5,6 @@ import utils as utils
 class PriceCollector:
     """
     A class for collecting and checking API credentials, as well as data collection and filtering.
-
-    Attributes:
-        instances (list): A list to keep track of instances of PriceCollector.
-        login (dict): A dictionary to store various API login credentials.
-        molport_id_valid (bool): Flag indicating whether Molport ID credentials are valid.
-        molport_api_key_valid (bool): Flag indicating whether Molport API key credentials are valid.
-        chemspace_api_key_valid (bool): Flag indicating whether ChemSpace API key credentials are valid.
-        mcule_api_key_valid (bool): Flag indicating whether MCule API key credentials are valid.
     """
     
     instances = []
@@ -43,12 +35,7 @@ class PriceCollector:
 
 
     def setMolportUsername(self, username):
-        """
-        Sets the Molport username.
 
-        Args:
-            username (str): The Molport username to set.
-        """
         self.login['molport_username'] = username
 
 
@@ -83,6 +70,9 @@ class PriceCollector:
 #------------------------------------------------------
 
     def status(self):
+        """
+        Displays the set status of various API keys.
+        """
         # Display the set status of various API keys
         if (self.login['molport_username'] and self.login['molport_password']) and self.login['molport_api_key']:
             print("Status: Molport : both creditentials are set.")
@@ -107,6 +97,14 @@ class PriceCollector:
 
 
     def check(self, Molport=True, ChemSpace=True, MCule=True):
+        """
+        Checks the validity of API credentials.
+
+        :param Molport: Whether to check Molport credentials.
+        :param ChemSpace: Whether to check ChemSpace credentials.
+        :param MCule: Whether to check MCule credentials.
+        :return: A value indicating whether the checks were successful.
+        """
         smiles = "CC(=O)NC1=CC=C(C=C1)O"
         value_return = 1
         a = 0
@@ -203,6 +201,13 @@ class PriceCollector:
 
 
     def collect(self, smiles_list, progress_output=None):
+        """
+        Collects data using API credentials.
+
+        :param smiles_list: List of SMILES representations.
+        :param progress_output: Progress output (optional).
+        :return: A DataFrame containing collected data.
+        """
         # Determine if Chemspace and/or Molport APIs are valid
         Chemspace = self.chemspace_api_key_valid
         Molport = self.molport_api_key_valid or self.molport_id_valid
@@ -217,6 +222,12 @@ class PriceCollector:
 
 
     def selectBest(self, dataframe):
+        """
+        Filters and selects the best data from a DataFrame.
+
+        :param dataframe: The input DataFrame.
+        :return: The filtered DataFrame.
+        """
         if dataframe.empty:
             return dataframe
         
