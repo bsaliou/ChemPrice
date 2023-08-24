@@ -1,10 +1,10 @@
 How to use Chemical Price Research
 ===================
 
-ChemPrices is a computer tool that allows retrieving the prices of molecules
- from their SMILES using various integrators. ChemPrices supports three 
- integrators: Molport, ChemSpace, and MCule. Each integrator requires an API 
- key to be used.
+ChemPrices is a computer tool that allows retrieving the prices of molecules 
+from their SMILES using various integrators. ChemPrices supports three 
+integrators: Molport, ChemSpace, and MCule. Each integrator requires an API 
+key to be used.
 
 Getting started
 ---------------
@@ -36,8 +36,8 @@ Connection to Molport via api key: 880d8343-8ui2-418c-9g7a-68b4e2e78c8b
     
     pc.setMolportApiKey("880d8343-8ui2-418c-9g7a-68b4e2e78c8b")
 
-In the case of molport, it's also possible to log in with a login and password.
- ChemSpace and MCule require an api key.
+In the case of molport, it's also possible to log in with a login and password. 
+ChemSpace and MCule require an api key.
 
 .. code:: python3
     
@@ -50,16 +50,26 @@ To check the status of each key that has been returned to the class, run the :
     
     pc.status()
 
+.. raw:: html
+
+   <div style="border: 1px solid #f0f0f0; background-color: #f9f9f9; padding: 20px; border-radius: 5px;">
+
 Possible Outputs:
+------------------
 
-1. Username/password and api key are set:
-   - "Status: Molport: both credentials are set."
+1. **Username/Password and API Key are Set:**
 
-2. Only the username/password or the api key is set:
-   - "Status: Molport: credential is set."
+   - Status: Molport: both credentials are set.
 
-3. No credential is set:
-   - "Status: Molport: no credential is set."
+2. **Only Username/Password or API Key is Set:**
+
+   - Status: Molport: credential is set.
+
+3. **No Credential is Set:**
+
+   - Status: Molport: no credential is set.
+
+   </div>
 
 Check the validity of identifiers
 --------------------
