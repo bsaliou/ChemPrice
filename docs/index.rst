@@ -16,8 +16,9 @@ This guide explains the functions of this library.
    
    user_manual/installation
    user_manual/getting_started
+   user_manual/development
 
 .. toctree::
    :caption: API Reference:
 
-   api
+   api/api
