@@ -9,7 +9,12 @@
 import os
 import sys
 
-sys.path.insert(0, os.path.abspath('..', '../chemicalprices'))
+# Ajouter le premier chemin d'accès
+sys.path.insert(0, os.path.abspath('..'))
+
+# Ajouter le deuxième chemin d'accès
+sys.path.insert(0, os.path.abspath('../chemicalprices'))
+
 
 # -- Project information
 
