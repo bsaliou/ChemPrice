@@ -1,36 +1,34 @@
 API documentation
 =================
 
-ChemPlot principal class is :class:`Plotter`. It receives a list of molecules 
-as a parameter in order to then use different functions for plotting the data
-in two dimensions. All the main functions of ChemPlot are part of the :class:`Plotter`.
-There are however two more functions outside of :class:`Plotter`, which can be 
-used to access the sample datasets.
+ChemPrices principal class is :class:`PriceCollector`. 
 
-.. currentmodule:: chemplot
+.. currentmodule:: code
 
-chemplot.Plotter
+chemicalprices.PriceCollector
 ----------------
 
-.. autoclass:: Plotter
+.. autoclass:: PriceCollector
 
-    .. automethod:: from_smiles
+    .. automethod:: setMolportUsername
 
-    .. automethod:: from_inchi
+    .. automethod:: setMolportPassword
 
-    .. automethod:: pca
+    .. automethod:: setMolportApiKey
 
-    .. automethod:: tsne
+    .. automethod:: setChemSpaceApiKey
 
-    .. automethod:: umap
+    .. automethod:: setMCuleApiKey
 
-    .. automethod:: cluster
+    .. automethod:: status
 
-    .. automethod:: visualize_plot
+    .. automethod:: check
 
-    .. automethod:: interactive_plot
+    .. automethod:: collect
 
-Utils
+    .. automethod:: selectBest
+
+utils
 -----
 
 .. autofunction:: load_data
