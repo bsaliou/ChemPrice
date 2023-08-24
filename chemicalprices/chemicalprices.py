@@ -3,6 +3,17 @@ import utils as utils
 
 
 class PriceCollector:
+    """
+    A class for collecting and checking API credentials, as well as data collection and filtering.
+
+    Attributes:
+        instances (list): A list to keep track of instances of PriceCollector.
+        login (dict): A dictionary to store various API login credentials.
+        molport_id_valid (bool): Flag indicating whether Molport ID credentials are valid.
+        molport_api_key_valid (bool): Flag indicating whether Molport API key credentials are valid.
+        chemspace_api_key_valid (bool): Flag indicating whether ChemSpace API key credentials are valid.
+        mcule_api_key_valid (bool): Flag indicating whether MCule API key credentials are valid.
+    """
     
     instances = []
     
@@ -32,6 +43,12 @@ class PriceCollector:
 
 
     def setMolportUsername(self, username):
+        """
+        Sets the Molport username.
+
+        Args:
+            username (str): The Molport username to set.
+        """
         self.login['molport_username'] = username
 
 

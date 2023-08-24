@@ -31,8 +31,12 @@ chemicalprices.PriceCollector
 utils
 -----
 
-.. autofunction:: load_data
+.. autofunction:: molport_collect_prices
 
-.. autofunction:: info_data
+.. autofunction:: chemspace_collect_prices
+
+.. autofunction:: mcule_collect_prices
+
+
     
     

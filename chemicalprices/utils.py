@@ -371,6 +371,7 @@ def get_quotes(token, quote):
         response = requests.get(url, headers=headers)
         yield response.json()
 
+
 # Function to collect prices and data from MCule API
 def mcule_collect_prices(token, package_ids, check_freq=0.5):
     data = []
