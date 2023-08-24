@@ -24,6 +24,17 @@ on the list of smiles entered.
     
     pc = PriceCollector()
 
+Request an api key
+--------------------
+
+To access integrators' data, you need to be able to connect to their api. 
+
+if you don't have an api key yet, you can click on the following links : 
+`Molport <https://www.molport.com/shop/user-api-keys>`_, 
+`ChemSpace <https://chem-space.com/contacts>`_ and 
+`MCule <https://mcule.com/contact/>`_,
+which will take you back to their sites where you can request an api key.
+
 Enter the API key for each integrator
 --------------------
 
