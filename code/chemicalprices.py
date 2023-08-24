@@ -1,9 +1,8 @@
 import requests
-import documentation.code.utils as utils
+import utils as utils
 
 
 class PriceCollector:
-    
     """
     A class used to plot the ECFP fingerprints of the molecules used to 
     instantiate it.
