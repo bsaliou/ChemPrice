@@ -28,8 +28,10 @@ chemicalprices.PriceCollector
 
     .. automethod:: selectBest
 
-utils
+Utils
 -----
+
+.. currentmodule:: utils
 
 .. autofunction:: molport_collect_prices
 

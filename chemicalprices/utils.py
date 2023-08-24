@@ -98,7 +98,16 @@ def molport_standardize_columns(data):
 
 # Collects prices for the given ids and coverts them into dataframe
 def molport_collect_prices(instance, molecule_ids):
+    """
+    Collects price data for molecules from Molport API.
 
+    :param instance: The PriceCollector instance containing API credentials.
+    :param molecule_ids: DataFrame containing molecule IDs and SMILES.
+    :type instance: PriceCollector
+    :type molecule_ids: pandas.DataFrame
+    :return: DataFrame containing collected price data.
+    :rtype: pandas.DataFrame
+    """
     all_molecules_data = []
 
     molport_username = instance.login['molport_username']
@@ -203,6 +212,16 @@ def chemspace_get_token(instance):
 
 # Collects prices for the given SMILES and coverts them into dataframe
 def chemspace_collect_prices(instance, smiles_list):
+    """
+    Collects price data for molecules from ChemSpace API.
+
+    :param instance: The PriceCollector instance containing API credentials.
+    :param molecule_ids: DataFrame containing molecule IDs and SMILES.
+    :type instance: PriceCollector
+    :type molecule_ids: pandas.DataFrame
+    :return: DataFrame containing collected price data.
+    :rtype: pandas.DataFrame
+    """
 
     access_token = chemspace_get_token(instance)
     url = "https://api.chem-space.com/v3/search/exact"
@@ -373,7 +392,18 @@ def get_quotes(token, quote):
 
 
 # Function to collect prices and data from MCule API
-def mcule_collect_prices(token, package_ids, check_freq=0.5):
+def mcule_collect_prices(token, package_ids):
+    """
+    Collects price data for molecules from MCule API.
+
+    :param instance: The PriceCollector instance containing API credentials.
+    :param molecule_ids: DataFrame containing molecule IDs and SMILES.
+    :type instance: PriceCollector
+    :type molecule_ids: pandas.DataFrame
+    :return: DataFrame containing collected price data.
+    :rtype: pandas.DataFrame
+    """
+    
     data = []
     
     if package_ids is None:
@@ -407,7 +437,7 @@ def mcule_collect_prices(token, package_ids, check_freq=0.5):
 
         response_package = check_status()
         while response_package == 1:
-            time.sleep(check_freq)
+            time.sleep(0.5)
             response_package = check_status()
 
         if response_package is None:

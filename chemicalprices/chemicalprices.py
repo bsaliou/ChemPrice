@@ -35,7 +35,11 @@ class PriceCollector:
 
 
     def setMolportUsername(self, username):
+        """
+        Sets the Molport username.
 
+        :param username: The Molport username to set.
+        """
         self.login['molport_username'] = username
 
 
@@ -43,6 +47,11 @@ class PriceCollector:
 
 
     def setMolportPassword(self, password):
+        """
+        Sets the Molport password.
+
+        :param password: The Molport password to set.
+        """
         self.login['molport_password'] = password
 
 
@@ -50,6 +59,11 @@ class PriceCollector:
 
 
     def setMolportApiKey(self, api_key):
+        """
+        Sets the Molport api key.
+
+        :param api_key: The Molport api key to set.
+        """
         self.login['molport_api_key'] = api_key
 
 
@@ -57,6 +71,11 @@ class PriceCollector:
 
 
     def setChemSpaceApiKey(self, api_key):
+        """
+        Sets the ChemSpace api key.
+
+        :param api_key: The ChemSpace api key to set.
+        """
         self.login['chemspace_api_key'] = api_key
 
 
@@ -64,6 +83,11 @@ class PriceCollector:
 
 
     def setMCuleApiKey(self, api_key):
+        """
+        Sets the MCule api key.
+
+        :param api_key: The MCule api key to set.
+        """
         self.login['mcule_api_key'] = api_key
 
 
