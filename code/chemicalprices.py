@@ -3,35 +3,6 @@ import utils as utils
 
 
 class PriceCollector:
-    """
-    A class used to plot the ECFP fingerprints of the molecules used to 
-    instantiate it.
-    
-    :param __sim_type: similarity type structural or tailored
-    :param __target_type: target type R (regression) or C (classificatino)
-    :param __target: list containing the target values. Is empty if a target does not exist
-    :param __mols: list of valid molecules that can be plotted
-    :param __df_descriptors: datatframe containing the descriptors representation of each molecule
-    :param __df_2_components: dataframe containing the two-dimenstional representation of each molecule
-    :param __plot_title: title of the plot reflecting the dimensionality reduction algorithm used
-    :param __data: list of the scaled descriptors to which the dimensionality reduction algorithm is applied
-    :param pca_fit: PCA object created when the corresponding algorithm is applied to the data
-    :param tsne_fit: t-SNE object created when the corresponding algorithm is applied to the data
-    :param umap_fit: UMAP object created when the corresponding algorithm is applied to the data
-    :param df_plot_xy: dataframe containing the coordinates that have been plotted
-    :type __sim_type: string
-    :type __target_type: string
-    :type __target: list
-    :type __mols: rdkit.Chem.rdchem.Mol
-    :type __df_descriptors: Dataframe
-    :type __df_2_components: Dataframe
-    :type __plot_title: string
-    :type __data: list
-    :type pca_fit: sklearn.decomposition.TSNE
-    :type tsne_fit: sklearn.manifold.TSNE
-    :type umap_fit: umap.umap_.UMAP
-    :type df_plot_xy: Dataframe
-    """
     
     instances = []
     
