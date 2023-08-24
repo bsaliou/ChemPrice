@@ -1,65 +1,68 @@
 How to use Chemical Price Research
 ===================
 
-ChemPlot is a cheminformatics tool whose purpose is to visualize subsets of the 
-chemical space in two dimensions. It uses the `RDKit chemistry framework`_, the
-`scikit-learn <http://scikit-learn.org/stable/index.html>`__ API and the `umap-learn <https://github.com/lmcinnes/umap>`__ API.
-
+ChemPrices is a computer tool that allows retrieving the prices of molecules
+ from their SMILES using various integrators. ChemPrices supports three 
+ integrators: Molport, ChemSpace, and MCule. Each integrator requires an API 
+ key to be used.
 
 Getting started
 ---------------
-To demonstrate how to use the functions the library offers we will use a `BBBP <https://github.com/mcsorkun/ChemPlot/blob/main/tests/test_data/C_2039_BBBP_2.csv>`__ 
-(blood-brain barrier penetration) [1]_ molecular dataset. This is a set of 
-molecules encoded as SMILES, which have been assigned a binary label according 
-to their permeability properties. This dataset can be loaded as a `pandas <https://pandas.pydata.org/pandas-docs/stable/index.html>`_`
-DataFrame object.
+To demonstrate how to use the functions, you need to create a list of molecule SMILES:
   
 .. code:: python3
 
-    from pandas import read_csv
+    smiles_list = ["CC(=O)NC1=CC=C(C=C1)O", "CC(C)CC1=CC=C(C=C1)C(C)C(=O)O", "O=C(C)Oc1ccccc1C(=O)O"]
 
-    data_BBBP = read_csv("BBBP.csv")
-
-To visualize the molecules in 2D according to their similarity it is first 
-needed to construct a ``Plotter`` object. This is the class containing 
-all the functions ChemPlot uses to produce the desired visualizations. A 
-``Plotter`` object can be constructed using classmethods, which differentiate 
-between the type of input that is feed to the object. In our example we need to 
-use the method from_smiles. We pass three parameters: the list of SMILES from 
-the BBBP dataset, their target values (the binary labels) and the target type 
-(in this case “C”, which stands for “Classification”).  
+Next, create a first instance with the PriceCollector class. It's from this class 
+that we'll be able to connect to the various integrators and then launch a search 
+on the list of smiles entered.
 
 .. code:: python3
 
-    from chemplot import Plotter
+    from chemicalprices import PriceCollector
     
-    cp = Plotter.from_smiles(data_BBBP["smiles"], target=data_BBBP["target"], target_type="C")
+    pc = PriceCollector()
 
-Plotting the results
+Enter the API key for each integrator
 --------------------
 
-When the ``Plotter`` object was constructed, descriptors for each SMILES were 
-calculated, using the library `mordred <http://mordred-descriptor.github.io/documentation/v0.1.0/introduction.html>`__, 
-and then selected based on the target values. We reduce the number of 
-dimensions for each molecule from the number of descriptors selected to only 2. 
-ChemPlot uses three different algorithms in order to achieve this. 
-In this example we will first use t-SNE [2]_.
+Now that the ``PriceCollector`` class has been created, we need to connect to one 
+or more integrators via an api key. 
+
+Connection to Molport via api key: 880d8343-8ui2-418c-9g7a-68b4e2e78c8b
 
 .. code:: python3
     
-    cp.tsne()
+    pc.setMolportApiKey("880d8343-8ui2-418c-9g7a-68b4e2e78c8b")
 
-The output will be a dataframe containg the reduced dimensions and the target values.
+In the case of molport, it's also possible to log in with a login and password.
+ ChemSpace and MCule require an api key.
 
-+------------------+------------------+------------------+
-| t-SNE-1          | t-SNE-2          | target           |
-+==================+==================+==================+
-| -41.056122       | 0.355575         | 1                |
-+------------------+------------------+------------------+
-| -35.535915       | 21.648867        | 1                |
-+------------------+------------------+------------------+
-| 23.771597        | -14.438373       | 1                |
-+------------------+------------------+------------------+
+.. code:: python3
+    
+    pc.setMolportUsername("john.spade")
+    pc.setMolportPassword("fasdga34a3")
+
+To check the status of each key that has been returned to the class, run the : 
+
+.. code:: python3
+    
+    pc.status()
+
+Possible Outputs:
+
+1. Username/password and api key are set:
+   - "Status: Molport: both credentials are set."
+
+2. Only the username/password or the api key is set:
+   - "Status: Molport: credential is set."
+
+3. No credential is set:
+   - "Status: Molport: no credential is set."
+
+Check the validity of identifiers
+--------------------
 
 To now visualize the chemical space of the dataset we use :mod:`visualize_plot()`.
 
