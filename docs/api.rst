@@ -3,7 +3,7 @@ API documentation
 
 ChemPrices principal class is :class:`PriceCollector`. 
 
-.. currentmodule:: code
+.. currentmodule:: chemicalprices
 
 chemicalprices.PriceCollector
 ----------------

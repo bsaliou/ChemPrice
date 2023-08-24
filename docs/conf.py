@@ -1,11 +1,15 @@
 # Configuration file for the Sphinx documentation builder.
-import sys
-import os
+
+# -- Path setup --------------------------------------------------------------
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
-sys.path.insert(0, os.path.abspath(os.path.join('..', 'src')))
+#
+import os
+import sys
+
+sys.path.insert(0, os.path.abspath('..', '../chemicalprices'))
 
 # -- Project information
 
@@ -24,7 +28,10 @@ extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.autosummary',
     'sphinx.ext.intersphinx',
+    "sphinx.ext.mathjax",
+    "sphinx.ext.viewcode"
 ]
+
 
 intersphinx_mapping = {
     'python': ('https://docs.python.org/3/', None),
