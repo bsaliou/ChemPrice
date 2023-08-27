@@ -7,7 +7,7 @@ version: 2
 
 # Spécifiez le système d'exploitation pour la construction
 build:
-  os: latest  # Ou utilisez le système d'exploitation spécifique dont vous avez besoin, comme "ubuntu-18.04"
+  os: ubuntu-20.04  # Ou "ubuntu-22.04" selon vos besoins
 
 # Construction de la documentation dans le répertoire docs/ avec Sphinx
 sphinx:
