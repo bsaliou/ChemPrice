@@ -8,6 +8,8 @@ version: 2
 # Spécifiez le système d'exploitation pour la construction
 build:
   os: ubuntu-20.04  # Ou "ubuntu-22.04" selon vos besoins
+  tools:
+    - sphinx
 
 # Construction de la documentation dans le répertoire docs/ avec Sphinx
 sphinx:
