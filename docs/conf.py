@@ -1,5 +1,5 @@
 # Configuration file for the Sphinx documentation builder.
-build_os = 'linux'
+
 # -- Path setup --------------------------------------------------------------
 
 # If extensions (or modules to document with autodoc) are in another directory,
