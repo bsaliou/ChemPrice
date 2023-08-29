@@ -20,5 +20,5 @@ formats:
 # Explicitly set the version of Python and its requirements
 python:
   install:
-    - requirements: requirements.txt 
+    - requirements: docs/requirements.txt 
     
