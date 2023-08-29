@@ -8,6 +8,7 @@ import os
 import threading
 import time
 from streamlit.runtime.scriptrunner import add_script_run_ctx
+from pathlib import Path
 
 DEFAULT_STATUS = 1
 INIT_STATUS = 2
@@ -21,8 +22,7 @@ LIMIT_SMILES = 100
 ######################
 
 pc = cp.PriceCollector()
-    
-st.set_page_config(page_title="ChemicalSearch Web Application", layout="wide")
+st.set_page_config(page_title="ChemPrice Web Application", layout="wide")
 
 emptycont=st.empty()
 home1=emptycont.container()
@@ -101,7 +101,8 @@ def create_integration_column(col, integrator_name):
 
     # Display integration status based on activation
     if st.session_state[f'activate_{integrator_name}'] == INIT_STATUS:
-        green_check = logo_check("images/green_check.png")
+        path = Path(__file__).parent / 'images/green_check.png'
+        green_check = logo_check(path)
         sub_col[1].write(f"{integrator_name}  {green_check}", unsafe_allow_html=True)
     else:
         sub_col[1].write(integrator_name)
@@ -169,9 +170,17 @@ def collect(smiles_df, progress_output):
 def main():
     
 
-    home1.title("Chemical Search")
-    set_background('./images/background.png')
-    st.sidebar.markdown(logo_chemprice("./images/logo_chemprice.png"), unsafe_allow_html=True)
+    home1.title("ChemPrice: A Tool For Chemical Price Research")
+    with home1.expander("About ChemPrice"):
+        # Enter identifier
+        st.write("ChemPrice is a Python tool for connecting to molecule sales platforms via API keys. The aim: automated extraction of data, such as prices and vendor names. ChemPrice supports Molport, ChemSpace and MCule integrators. It works by taking as input a list of molecules in the form of SMILES, producing a complete dataframe presenting all the prices found on different sources, as well as a second dataframe, highlighting the most advantageous offers in terms of quality/price ratio.")
+        documentation_url = "https://github.com/bsaliou/ChemPrice"
+        st.markdown(f"If you are intrested in a more detailed explanation about ChemPlot please visit the official library's documentation at [Read the docs.]({documentation_url})")
+        
+    path = Path(__file__).parent / 'images/background.png'
+    set_background(path)
+    path = Path(__file__).parent / 'images/logo_chemprice.png'
+    st.sidebar.markdown(logo_chemprice(path), unsafe_allow_html=True)
     st.sidebar.markdown("")
 
 
@@ -244,7 +253,7 @@ def main():
     
     smiles_df = [] 
     if not st.session_state["new_page"]:
-        smiles_file = st.sidebar.file_uploader("Choose a file")
+        smiles_file = st.sidebar.file_uploader("Choose a file", help = "The file must be a csv file with the list of SMILES to be searched in the first column.")
 
         if smiles_file is not None:
             df = pd.read_csv(smiles_file)
