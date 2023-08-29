@@ -1,7 +1,7 @@
+import sys
 import streamlit as st
 import pandas as pd
 import base64
-import chemicalprices as cp
 import time
 import tempfile
 import os
@@ -9,6 +9,10 @@ import threading
 import time
 from streamlit.runtime.scriptrunner import add_script_run_ctx
 from pathlib import Path
+
+# Ajouter le deuxième chemin d'accès
+sys.path.insert(0, os.path.abspath('../chemicalprices'))
+import chemicalprices as cp
 
 DEFAULT_STATUS = 1
 INIT_STATUS = 2
