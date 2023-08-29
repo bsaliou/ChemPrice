@@ -10,6 +10,9 @@ import os
 import sys
 
 # Ajouter le deuxième chemin d'accès
+sys.path.insert(0, os.path.abspath('..'))
+
+# Ajouter le deuxième chemin d'accès
 sys.path.insert(0, os.path.abspath('../chemicalprices'))
 
 
@@ -51,8 +54,8 @@ html_theme = 'sphinx_rtd_theme'
 epub_show_urls = 'footnote'
 
 # Add logo
-html_logo = "images/logo_chemprice.png"
-html_theme_options = {
-    'logo_only': True,
-    'display_version': False,
-}
+#html_logo = "images/logo_chemprice.png"
+#html_theme_options = {
+#    'logo_only': True,
+#    'display_version': False,
+#}
