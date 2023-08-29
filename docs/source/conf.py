@@ -52,3 +52,10 @@ html_theme = 'sphinx_rtd_theme'
 
 # -- Options for EPUB output
 epub_show_urls = 'footnote'
+
+#Add logo
+html_logo = "../images/logo_chemprice.png"
+html_theme_options = {
+    'logo_only': True,
+    'display_version': False,
+}
