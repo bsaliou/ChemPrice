@@ -18,6 +18,12 @@ build:
 formats:
   - epub
   - pdf
+downloads:
+  - format: pdf
+    url: //chemprice.readthedocs.io/_/downloads/en/latest/pdf/
+  - format: epub
+    url: //chemprice.readthedocs.io/_/downloads/en/latest/epub/
+
 
 # Explicitly set the version of Python and its requirements
 python:
