@@ -74,15 +74,6 @@ Possible Outputs
     # No Credential is Set:
     Status: Molport: no credential is set.
 
-In these examples, we're only talking about the Molport connection; 
-for ChemSpace and MCule, the approach is the same. You need to use 
-the :mod:`setChemSpaceApiKey()` and :mod:`setMCuleApiKey()` functions, such as :
-
-.. code:: python3
-
-    pc.setChemSpaceApiKey(<chemspace_api_key>)
-    pc.setMCuleApiKey(<mcule_api_key>)
-
 Price search
 --------------------
 

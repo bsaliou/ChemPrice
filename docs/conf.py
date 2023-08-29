@@ -9,11 +9,15 @@
 import os
 import sys
 
-
+# Ajouter le premier chemin d'accès
 sys.path.insert(0, os.path.abspath('..'))
+
+# Ajouter le deuxième chemin d'accès
+sys.path.insert(0, os.path.abspath('../chemicalprices'))
 
 
 # -- Project information
+
 project = 'Chemical Price Research'
 copyright = '2023, Baptiste Saliou'
 author = 'Baptiste Saliou'
@@ -47,12 +51,4 @@ templates_path = ['_templates']
 html_theme = 'sphinx_rtd_theme'
 
 # -- Options for EPUB output
-
 epub_show_urls = 'footnote'
-
-#Add logo
-html_logo = "../images/logo_chemprice.png"
-html_theme_options = {
-    'logo_only': True,
-    'display_version': False,
-}
