@@ -21,4 +21,4 @@ This guide explains the functions of this library.
 .. toctree::
    :caption: API Reference:
 
-   api/api
+   api
