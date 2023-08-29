@@ -25,7 +25,7 @@ jobs:
         run: pip install -r requirements_test.txt
 
       - name: Run tests
-        run: pytest --rootdir=ChemPrice/test/ --junitxml=test-results.xml
+        run: pytest --rootdir=test/ --junitxml=test-results.xml
 
       - name: Upload test results
         uses: actions/upload-artifact@v2
