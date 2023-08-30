@@ -181,7 +181,7 @@ def main():
         documentation_url = "https://github.com/bsaliou/ChemPrice"
         st.markdown(f"If you are intrested in a more detailed explanation about ChemPlot please visit the official library's documentation at [Read the docs.]({documentation_url})")
         
-    path = Path(__file__).parent / 'images/background.png'
+    path = Path(__file__).parent / 'images/background.jpg'
     set_background(path)
     path = Path(__file__).parent / 'images/logo_chemprice.png'
     st.sidebar.markdown(logo_chemprice(path), unsafe_allow_html=True)

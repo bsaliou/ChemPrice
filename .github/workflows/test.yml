@@ -22,7 +22,7 @@ jobs:
           python-version: 3.x
 
       - name: Install dependencies
-        run: pip install -r requirements_test.txt
+        run: pip install -r test/requirements.txt
 
       - name: Run tests
         run: pytest --rootdir=test/ --junitxml=test-results.xml

@@ -216,9 +216,9 @@ def chemspace_collect_prices(instance, smiles_list):
     Collects price data for molecules from ChemSpace API.
 
     :param instance: The PriceCollector instance containing API credentials.
-    :param molecule_ids: DataFrame containing molecule IDs and SMILES.
+    :param smiles_list: list containing molecule SMILES.
     :type instance: PriceCollector
-    :type molecule_ids: pandas.DataFrame
+    :type smiles_list: list
     :return: DataFrame containing collected price data.
     :rtype: pandas.DataFrame
     """
@@ -392,17 +392,19 @@ def get_quotes(token, quote):
 
 
 # Function to collect prices and data from MCule API
-def mcule_collect_prices(token, package_ids):
+def mcule_collect_prices(instance, package_ids):
     """
     Collects price data for molecules from MCule API.
 
     :param instance: The PriceCollector instance containing API credentials.
-    :param molecule_ids: DataFrame containing molecule IDs and SMILES.
+    :param package_ids: list containing molecule package IDs.
     :type instance: PriceCollector
-    :type molecule_ids: pandas.DataFrame
+    :type package_ids: list
     :return: DataFrame containing collected price data.
     :rtype: pandas.DataFrame
     """
+    
+    token = instance.login['mcule_api_key']
     
     data = []
     
