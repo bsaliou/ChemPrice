@@ -178,7 +178,7 @@ def main():
     with home1.expander("About ChemPrice"):
         # Enter identifier
         st.write("ChemPrice is a Python tool for connecting to molecule sales platforms via API keys. The aim: automated extraction of data, such as prices and vendor names. ChemPrice supports Molport, ChemSpace and MCule integrators. It works by taking as input a list of molecules in the form of SMILES, producing a complete dataframe presenting all the prices found on different sources, as well as a second dataframe, highlighting the most advantageous offers in terms of quality/price ratio.")
-        documentation_url = "https://github.com/bsaliou/ChemPrice"
+        documentation_url = "https://differ-chemprice.readthedocs-hosted.com/en/latest/"
         st.markdown(f"If you are intrested in a more detailed explanation about ChemPlot please visit the official library's documentation at [Read the docs.]({documentation_url})")
         
     path = Path(__file__).parent / 'images/background.jpg'
