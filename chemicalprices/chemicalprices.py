@@ -1,5 +1,8 @@
 import requests
-import utils as utils
+import os
+import sys
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+import utils
 
 
 class PriceCollector:
@@ -131,7 +134,7 @@ class PriceCollector:
         """
         smiles = "CC(=O)NC1=CC=C(C=C1)O"
         value_return = 1
-        a = 0
+        integrator_correct = 0
         
         if Molport:
             if self.login['molport_username'] and self.login['molport_password']:
@@ -151,7 +154,7 @@ class PriceCollector:
                 if response["Result"]["Status"] == 1:
                     self.molport_id_valid = True
                     print("Check: Molport username and password are correct.")
-                    a = 1
+                    integrator_correct = 1
                 else:
                     print("Check: Molport username and/or password are incorrect.")
                     value_return = 0
@@ -173,7 +176,7 @@ class PriceCollector:
                 if response["Result"]["Status"] == 1:
                     self.molport_api_key_valid = True
                     print("Check: Molport api key is correct.")
-                    a = 1
+                    integrator_correct = 1
                 else:
                     print("Check: Molport api key is incorrect.")
                     value_return = 0
@@ -191,7 +194,7 @@ class PriceCollector:
                 if response.status_code == 200:
                     self.chemspace_api_key_valid = True
                     print("Check: Chemspace api key is correct.")
-                    a = 1
+                    integrator_correct= 1
                 else:
                     print("Check: Chemspace api key is incorrect.")
                     value_return = 0
@@ -210,15 +213,15 @@ class PriceCollector:
                 if response.status_code == 200:
                     self.mcule_api_key_valid = True
                     print("Check: MCule api key is correct.")
-                    a = 1
+                    integrator_correct = 1
                 else:
                     print("Check: MCule api key is incorrect.")
                     value_return = 0
         print("")
         
-        if a:
+        if integrator_correct:
             return value_return
-        return 1
+        return 0
 
 
 #------------------------------------------------------

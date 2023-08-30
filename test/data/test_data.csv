@@ -1,0 +1,11 @@
+Input SMILES,USD/l,USD/mol,USD/g
+smiles_1,10.5,,
+smiles_1,7.0,,
+smiles_1,9.9,,
+smiles_1,10.5,,
+smiles_1,,100.0,
+smiles_1,,1.0,
+smiles_1,,23.0,
+smiles_1,,,17.6
+smiles_1,,,90.0
+smiles_1,,,7.0

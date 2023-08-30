@@ -1,0 +1,4 @@
+Input SMILES,USD/l,USD/mol,USD/g
+smiles_1,,,7.0
+smiles_1,,1.0,
+smiles_1,7.0,,

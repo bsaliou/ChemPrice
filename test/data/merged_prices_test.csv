@@ -1,0 +1,3 @@
+Source,Input SMILES,SMILES,CAS,Supplier Name,Purity,Amount,Measure,Price_USD,Last Update Date Exact
+Chemspace,smiles_1,smiles_1,100-10-1,Labo,>90,10,ml,20,
+Molport,smiles_2,smiles_2,,Laboratory,91,1,ml,39,01/01/2000
