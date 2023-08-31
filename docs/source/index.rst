@@ -1,4 +1,4 @@
-ChemPrice: A Tool For Chemical Price Research
+ChemPrice: A Tool For Chemical Price Search
 ===================================
 
 **Date**: |today| **Version**: |version|
