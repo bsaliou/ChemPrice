@@ -4,68 +4,85 @@
   :alt: Alternative text
   :align: center
 
+# ChemPrice
 
-How to use ChemPrice
-===================
-
-ChemPrices is a computer tool that allows retrieving the prices of molecules 
-from their SMILES using various integrators. ChemPrices supports three 
-integrators: Molport, ChemSpace, and MCule. Each integrator requires an API 
+ChemPrices is a computer tool that allows retrieving the prices of molecules
+from their SMILES using various integrators. ChemPrices supports three
+integrators: Molport, ChemSpace, and MCule. Each integrator requires an API
 key to be used.
 
-Getting started
----------------
+## Resources
+
+### User Manual
+
+You can find the detailed features and examples in the following link: [User Manual](https://differ-chemprice.readthedocs-hosted.com/en/latest/).
+
+### Web Application
+
+ChemPlot is also available as a web application. You can use it at the following link: [Web Application](https://share.streamlit.io/bsaliou/chemprice-web/main/web_app_chemprice.py).
+
+## Installation
+
+### Use pip
+
+ChemPrice can be installed using pip by
+running:
+
+    pip install chemprice
+
+## How to use Chemprice
+
+### Getting started
+
 To demonstrate how to use the functions, you need to create a list of molecule SMILES:
   
-.. code:: python3
+```python
+smiles_list = ["CC(=O)NC1=CC=C(C=C1)O", "CC(C)CC1=CC=C(C=C1)C(C)C(=O)O", "O=C(C)Oc1ccccc1C(=O)O"]
+```
 
-    smiles_list = ["CC(=O)NC1=CC=C(C=C1)O", "CC(C)CC1=CC=C(C=C1)C(C)C(=O)O", "O=C(C)Oc1ccccc1C(=O)O"]
-
-Next, create a first instance with the PriceCollector class. It's from this class 
-that we'll be able to connect to the various integrators and then launch a search 
+Next, create a first instance with the PriceCollector class. It's from this class
+that we'll be able to connect to the various integrators and then launch a search
 on the list of smiles entered.
 
-.. code:: python3
+```python
+from chemicalprices import PriceCollector 
+pc = PriceCollector()
+```
 
-    from chemicalprices import PriceCollector
-    
-    pc = PriceCollector()
+### Request an api key
 
-Request an api key
---------------------
+To access integrators' data, you need to be able to connect to their api.
 
-To access integrators' data, you need to be able to connect to their api. 
-
-If you don't have an api key yet, you can click on the following links : 
-`Molport <https://www.molport.com/shop/user-api-keys>`_, 
-`ChemSpace <https://chem-space.com/contacts>`_ and 
+If you don't have an api key yet, you can click on the following links :
+`Molport <https://www.molport.com/shop/user-api-keys>`_,
+`ChemSpace <https://chem-space.com/contacts>`_ and
 `MCule <https://mcule.com/contact/>`_,
 which will take you back to their sites where you can request an api key.
 
 Enter the API key for each integrator
 --------------------
 
-Now that the ``PriceCollector`` class has been created, we need to connect to one 
-or more integrators via an api key. 
+Now that the ``PriceCollector`` class has been created, we need to connect to one
+or more integrators via an api key.
 
 Connection to Molport via api key: 880d8343-8ui2-418c-9g7a-68b4e2e78c8b
 
 .. code:: python3
-    
+
     pc.setMolportApiKey("880d8343-8ui2-418c-9g7a-68b4e2e78c8b")
 
-In the case of molport, it's also possible to log in with a login and password. 
+In the case of molport, it's also possible to log in with a login and password.
 ChemSpace and MCule require an api key.
 
 .. code:: python3
-    
+
     pc.setMolportUsername("john.spade")
     pc.setMolportPassword("fasdga34a3")
 
-To check the status of each key that has been returned to the class, run the : 
+To check the status of each key that has been returned to the class, run the :
 
 .. code:: python3
-    
+
     pc.status()
 
 Possible Outputs
@@ -81,8 +98,8 @@ Possible Outputs
     # No Credential is Set:
     Status: Molport: no credential is set.
 
-In these examples, we're only talking about the Molport connection; 
-for ChemSpace and MCule, the approach is the same. You need to use 
+In these examples, we're only talking about the Molport connection;
+for ChemSpace and MCule, the approach is the same. You need to use
 the :mod:`setChemSpaceApiKey()` and :mod:`setMCuleApiKey()` functions, such as :
 
 .. code:: python3
@@ -93,7 +110,7 @@ the :mod:`setChemSpaceApiKey()` and :mod:`setMCuleApiKey()` functions, such as :
 Price search
 --------------------
 
-Before starting the price search, check the validity of the api keys entered. 
+Before starting the price search, check the validity of the api keys entered.
 
 .. code:: python3
 
@@ -109,10 +126,10 @@ Possible Outputs:
     # API Key is Set but not correct:
     Check: Molport api key is incorrect.
 
-If the identifiers checked are correct, then it's possible 
-to run the method :mod:`collect()` to obtain all the information 
-found on the molecule. The price is given in USD according to 
-the units and quantity entered by the vendor. The units of measurement 
+If the identifiers checked are correct, then it's possible
+to run the method :mod:`collect()` to obtain all the information
+found on the molecule. The price is given in USD according to
+the units and quantity entered by the vendor. The units of measurement
 for quantities are categorized into three families: moles, grams, and liters.
 
 .. code:: python3
@@ -131,9 +148,9 @@ The output will be a dataframe containing all price information about the molecu
 | CC(=O)NC1=CC=C(C=C1)O | Molport | TargetMol Chemicals   | 100.0  | 500    | mg      | 50.0      |
 +-----------------------+---------+-----------------------+--------+--------+---------+-----------+
 
-With the :mod:`selectBest()` function, you can keep only the best prices for each molecule. 
-In fact, for each unit of measurement (mol gram and liter) the results are compared 
-to find the best quantity/price ratio. 
+With the :mod:`selectBest()` function, you can keep only the best prices for each molecule.
+In fact, for each unit of measurement (mol gram and liter) the results are compared
+to find the best quantity/price ratio.
 
 .. code:: python3
 
