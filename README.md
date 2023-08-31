@@ -1,6 +1,6 @@
 
 <p align="center">
-  <img src="logo/logo_chemprice_transparant.png" alt="Nom de l'image" width="200">
+  <img src="logo/logo_chemprice_transparant.png" alt="Nom de l'image" width="500">
 </p>
 
 # ChemPrice
