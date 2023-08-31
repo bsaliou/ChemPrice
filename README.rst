@@ -1,7 +1,7 @@
 .. raw:: html
 
    <div style="text-align: center;">
-   .. image:: logo/logo_chemprice_transparant.png
+   .. image:: logo/logo_chemprice_white.png
       :width: 400
       :alt: Alternative text
    </div>
