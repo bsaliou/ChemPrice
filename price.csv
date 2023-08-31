@@ -1,6 +1,0 @@
-,Input SMILES,Source,SMILES,Last Update Date Exact,Supplier Name,Purity,Amount,Measure,Price_USD,USD/g,USD/mol,USD/l
-0,CC(=O)NC1=CC=C(C=C1)O,Molport,CC(=O)Nc1ccc(O)cc1,"Dec 23, 2022",Cayman Europe,>=98,500,g,110.0,0.22,,
-1,CC(C)CC1=CC=C(C=C1)C(C)C(=O)O,Molport,CC(C)Cc1ccc(cc1)C(C)C(O)=O,"Dec 14, 2022",Apexbio Technology LLC,99.17,5,g,71.0,14.2,,
-0,CC(C)CC1=CC=C(C=C1)C(C)C(=O)O,Molport,CC(C)Cc1ccc(cc1)C(C)C(O)=O,"Aug 30, 2023",Life Chemicals Inc.,>90,20,micromol,79.0,,3950000.0000000005,
-2,O=C(C)Oc1ccccc1C(=O)O,Molport,CC(=O)Oc1ccccc1C(O)=O,"Dec 23, 2022",Cayman Europe,>=90,500,g,80.3,0.1606,,
-1,O=C(C)Oc1ccccc1C(=O)O,Molport,CC(=O)Oc1ccccc1C(O)=O,"Aug 30, 2023",Life Chemicals Inc.,>90,20,micromol,79.0,,3950000.0000000005,

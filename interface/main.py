@@ -156,6 +156,7 @@ def display_price(dataframe, label, drop_input_smiles = False):
         
     os.remove(file_path)
     
+    dataframe = dataframe.dropna(axis=1, how='all')
     if drop_input_smiles:
         dataframe.drop("Input SMILES", axis=1, inplace=True)
     st.write(dataframe)

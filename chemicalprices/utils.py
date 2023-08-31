@@ -295,7 +295,10 @@ def chemspace_collect_prices(instance, smiles_list):
 
 
 # Function to collect MCule IDs with respect to limits
-def mcule_get_ids(mcule_token, smiles_list):
+def mcule_get_ids(instance, smiles_list):
+    
+    mcule_token = instance.login['mcule_api_key']
+    
     id_smiles_list = []
 
     headers = {
@@ -329,7 +332,10 @@ def mcule_get_ids(mcule_token, smiles_list):
 
 
 # Function to build packages for multiple amounts
-def build_packages(mcule_token, df):
+def build_packages(instance, df):
+    
+    mcule_token = instance.login['mcule_api_key']
+    
     if df.empty:
         return
     # Define the API URL
@@ -684,11 +690,10 @@ def collect_vendors(instance, smiles_list, progress_output=None, ChemSpace=True,
         
     if MCule:
         # Get the molecule IDs and print count MolPort
-        mcule_token = instance.login['mcule_api_key']
         print(f"Collecting ID's for given {len(smiles_list)} SMILES from MCule...")
-        df_molecule_ids = mcule_get_ids(mcule_token, smiles_list)
+        df_molecule_ids = mcule_get_ids(instance, smiles_list)
         smiles_exists = df_molecule_ids['Input SMILES'].nunique()
-        package_id = build_packages(mcule_token, df_molecule_ids)
+        package_id = build_packages(instance, df_molecule_ids)
         print(f"Total: {smiles_exists} molecules and {len(df_molecule_ids)} conformers are found in MCule.\n")
         progress += 1/(2*nb_integrator)
         if progress_output is not None:
@@ -696,7 +701,7 @@ def collect_vendors(instance, smiles_list, progress_output=None, ChemSpace=True,
 
         # Get the prices and print count from MCule
         print(f"Collecting Prices for given {len(smiles_list)} IDs from MCule...")
-        mcule_prices = mcule_collect_prices(mcule_token, package_id)
+        mcule_prices = mcule_collect_prices(instance, package_id)
         mcule_prices = add_input_smiles_columns(df_molecule_ids, mcule_prices)
         smiles_with_price = mcule_prices.loc[mcule_prices['Price_USD'].notnull(), 'Input SMILES'].nunique()
         print(f"Total: {len(mcule_prices)} prices for {smiles_with_price} molecules are found in MCule.\n")
