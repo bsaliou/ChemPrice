@@ -3,9 +3,9 @@ API documentation
 
 ChemPrices principal class is :class:`PriceCollector`. 
 
-.. currentmodule:: chemicalprices
+.. currentmodule:: chemprice
 
-chemicalprices.PriceCollector
+chemprice.PriceCollector
 ----------------
 
 .. autoclass:: PriceCollector

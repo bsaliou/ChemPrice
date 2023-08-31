@@ -4,9 +4,9 @@ import os
 import sys
 
 # Add path
-sys.path.insert(0, os.path.abspath('../chemicalprices'))
-from chemicalprices import utils
-from chemicalprices import chemicalprices as cp
+sys.path.insert(0, os.path.abspath('../chemprice'))
+from chemprice import utils
+from chemprice import chemprice as cp
 
 # Création d'instances
 instance = cp.PriceCollector()
