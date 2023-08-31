@@ -156,3 +156,9 @@ The output will be a dataframe containing only the best quantity/price ratio abo
 | CC(=O)NC1=CC=C(C=C1)O | Molport | Cayman Europe       | >=98   | 500    | g        | 407.1     | 0.22   |                    |
 | O=C(C)Oc1ccccc1C(=O)O | Molport | Cayman Europe       | >=90   | 500    | g        | 112.8     | 0.1606 |                    |
 | O=C(C)Oc1ccccc1C(=O)O | Molport | Life Chemicals Inc. | >90    | 20     | micromol | 50.0      |        | 3950000.0000000005 |
+
+### Contact
+
+For any question you can contact us through email:
+
+- [Baptiste Saliou](mailto:baptiste1saliou@gmail.com)
