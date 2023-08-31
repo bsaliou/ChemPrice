@@ -5,8 +5,8 @@
 
 # ChemPrice
 
-ChemPrices is a computer tool that allows retrieving the prices of molecules
-from their SMILES using various integrators. ChemPrices supports three
+ChemPrice is a computer tool that allows retrieving the prices of molecules
+from their SMILES using various integrators. ChemPrice supports three
 integrators: Molport, ChemSpace, and MCule. Each integrator requires an API
 key to be used.
 
@@ -18,7 +18,7 @@ You can find the detailed features and examples in the following link: [User Man
 
 ### Web Application
 
-ChemPlot is also available as a web application. You can use it at the following link: [Web Application](https://share.streamlit.io/bsaliou/chemprice-web/main/web_app_chemprice.py).
+ChemPrice is also available as a web application. You can use it at the following link: [Web Application](https://share.streamlit.io/bsaliou/chemprice-web/main/web_app_chemprice.py).
 
 ## Installation
 
@@ -44,7 +44,7 @@ that we'll be able to connect to the various integrators and then launch a searc
 on the list of smiles entered.
 
 ```python
-from chemicalprices import PriceCollector 
+from chemiprice import PriceCollector 
 pc = PriceCollector()
 ```
 

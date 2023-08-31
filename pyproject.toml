@@ -3,6 +3,6 @@ requires = ["flit_core >=3.2,<4"]
 build-backend = "flit_core.buildapi"
 
 [project]
-name = "Chemical Price Research"
+name = "ChemPrice"
 authors = [{name = "Saliou", email = "baptiste.saliou@etu.unistra.fr"}]
 dynamic = ["version", "description"]
