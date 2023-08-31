@@ -1,6 +1,6 @@
 
 <p align="center">
-  <img src="logo/logo_chemprice_transparant.png" alt="Nom de l'image">
+  <img src="logo/logo_chemprice_transparant.png" alt="Nom de l'image" width="200">
 </p>
 
 # ChemPrice
@@ -53,77 +53,75 @@ pc = PriceCollector()
 To access integrators' data, you need to be able to connect to their api.
 
 If you don't have an api key yet, you can click on the following links :
-`Molport <https://www.molport.com/shop/user-api-keys>`_,
-`ChemSpace <https://chem-space.com/contacts>`_ and
-`MCule <https://mcule.com/contact/>`_,
+[Molport](https://www.molport.com/shop/user-api-keys),
+[ChemSpace](https://chem-space.com/contacts) and
+[MCule](https://mcule.com/contact/),
 which will take you back to their sites where you can request an api key.
 
-Enter the API key for each integrator
---------------------
+### Enter the API key for each integrator
 
 Now that the ``PriceCollector`` class has been created, we need to connect to one
 or more integrators via an api key.
 
 Connection to Molport via api key: 880d8343-8ui2-418c-9g7a-68b4e2e78c8b
 
-.. code:: python3
-
-    pc.setMolportApiKey("880d8343-8ui2-418c-9g7a-68b4e2e78c8b")
+```python
+pc.setMolportApiKey("880d8343-8ui2-418c-9g7a-68b4e2e78c8b")
+```
 
 In the case of molport, it's also possible to log in with a login and password.
 ChemSpace and MCule require an api key.
 
-.. code:: python3
-
-    pc.setMolportUsername("john.spade")
-    pc.setMolportPassword("fasdga34a3")
+```python
+pc.setMolportUsername("john.spade")
+pc.setMolportPassword("fasdga34a3")
+```
 
 To check the status of each key that has been returned to the class, run the :
 
-.. code:: python3
-
-    pc.status()
+```python
+pc.status()
+```
 
 Possible Outputs
 
-.. code:: python3
+```python
+# Username/Password and API Key are Set:
+Status: Molport: both credentials are set.
 
-    # Username/Password and API Key are Set:
-    Status: Molport: both credentials are set.
+# Only Username/Password or API Key is Set:
+Status: Molport: credential is set.
 
-    # Only Username/Password or API Key is Set:
-    Status: Molport: credential is set.
-
-    # No Credential is Set:
-    Status: Molport: no credential is set.
+# No Credential is Set:
+Status: Molport: no credential is set.
+```
 
 In these examples, we're only talking about the Molport connection;
 for ChemSpace and MCule, the approach is the same. You need to use
 the :mod:`setChemSpaceApiKey()` and :mod:`setMCuleApiKey()` functions, such as :
 
-.. code:: python3
+```python
+pc.setChemSpaceApiKey(<chemspace_api_key>)
+pc.setMCuleApiKey(<mcule_api_key>)
+```
 
-    pc.setChemSpaceApiKey(<chemspace_api_key>)
-    pc.setMCuleApiKey(<mcule_api_key>)
-
-Price search
---------------------
+### Price search
 
 Before starting the price search, check the validity of the api keys entered.
 
-.. code:: python3
-
-    pc.check()
+```python
+pc.check()
+```
 
 Possible Outputs:
 
-.. code:: python3
+```python
+# API Key is Set and correct:
+Check: Molport api key is correct.
 
-    # API Key is Set and correct:
-    Check: Molport api key is correct.
-
-    # API Key is Set but not correct:
-    Check: Molport api key is incorrect.
+# API Key is Set but not correct:
+Check: Molport api key is incorrect.
+```
 
 If the identifiers checked are correct, then it's possible
 to run the method :mod:`collect()` to obtain all the information
@@ -131,9 +129,9 @@ found on the molecule. The price is given in USD according to
 the units and quantity entered by the vendor. The units of measurement
 for quantities are categorized into three families: moles, grams, and liters.
 
-.. code:: python3
-
-    all_prices = pc.collect()
+```python
+all_prices = pc.collect()
+```
 
 The output will be a dataframe containing all price information about the molecule.
 
@@ -151,9 +149,9 @@ With the :mod:`selectBest()` function, you can keep only the best prices for eac
 In fact, for each unit of measurement (mol gram and liter) the results are compared
 to find the best quantity/price ratio.
 
-.. code:: python3
-
-    pc.selectBest(all_prices)
+```python
+pc.selectBest(all_prices)
+```
 
 The output will be a dataframe containing only the best quantity/price ratio about each molecule.
 
