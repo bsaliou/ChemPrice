@@ -1,5 +1,7 @@
-.. image:: logo/logo_chemprice_transparent.png
-   :width: 300
+   <p align="center">
+     <img width="600" src="logo/logo_chemprice_transparent.png">
+   </p>
+   <br />
 
 
 How to use ChemPrice
