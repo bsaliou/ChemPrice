@@ -1,8 +1,8 @@
-.. raw:: html
-   <p align="center">
-     <img width="600" src="logo/logo_chemprice_transparent.png">
-   </p>
-   <br />
+
+<p align="center">
+    <img width="600" src="logo/logo_chemprice_transparent.png">
+</p>
+<br />
 
 
 How to use ChemPrice
