@@ -1,7 +1,7 @@
 API documentation
 =================
 
-ChemPrices principal class is :class:`PriceCollector`. 
+ChemPrice principal class is :class:`PriceCollector`. 
 
 .. currentmodule:: chemprice
 
