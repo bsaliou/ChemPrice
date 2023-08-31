@@ -1,4 +1,4 @@
-Chemical Price Research
+ChemPrice
 ===================================
 
 **Date**: |today| **Version**: |version|
