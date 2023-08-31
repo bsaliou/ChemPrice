@@ -1,8 +1,10 @@
+.. raw:: html
 
-.. image:: logo/logo_chemprice_white.png
-  :width: 400
-  :alt: Alternative text
-
+   <div style="text-align: center;">
+   .. image:: logo/logo_chemprice_transparant.png
+      :width: 400
+      :alt: Alternative text
+   </div>
 
 How to use ChemPrice
 ===================
