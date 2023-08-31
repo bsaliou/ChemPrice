@@ -136,7 +136,7 @@ all_prices = pc.collect()
 The output will be a dataframe containing all price information about the molecule.
 
 | Input Smiles          | Source  | Supplier Name         | Purity | Amount | Measure | Price_USD |
-|-----------------------|---------|-----------------------|--------|--------|---------|-----------+
+|-----------------------|---------|-----------------------|--------|--------|---------|-----------|
 | CC(=O)NC1=CC=C(C=C1)O | Molport | "ChemDiv, Inc."       | >90    | 100    | mg      | 407.1     |
 | CC(=O)NC1=CC=C(C=C1)O | Molport | MedChemExpress Europe | 98.83  | 10     | g       | 112.8     |
 | CC(=O)NC1=CC=C(C=C1)O | Molport | TargetMol Chemicals   | 100.0  | 500    | mg      | 50.0      |
