@@ -4,10 +4,24 @@
     :alt: Alternative text
     :align: center
 
-<p align="center">
-  <img width="600" src=logo/logo_chemprice_transparant.png>
-</p>
-<br />
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  .centered-image {
+    display: block;
+    margin: 0 auto;
+  }
+</style>
+</head>
+<body>
+
+<div style="text-align: center;">
+  <img class="centered-image" width="600" src="logo/logo_chemprice_transparant.png" alt="Logo Chemprice">
+</div>
+
+</body>
+</html>
 
 How to use ChemPrice
 ===================
