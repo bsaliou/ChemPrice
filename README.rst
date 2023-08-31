@@ -1,9 +1,9 @@
 
-<div style="text-align: center;">
-.. image:: logo/logo_chemprice_white.png
+.. image:: logo/logo_chemprice_transparant.png
     :width: 400
     :alt: Alternative text
-</div>
+    :align: center
+
 
 How to use ChemPrice
 ===================
