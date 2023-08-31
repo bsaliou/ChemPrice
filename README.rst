@@ -1,3 +1,4 @@
+.. raw:: html
    <p align="center">
      <img width="600" src="logo/logo_chemprice_transparent.png">
    </p>
