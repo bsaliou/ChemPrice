@@ -1,4 +1,8 @@
-How to use Chemical Price Research
+.. image:: logo/logo_chemprice_transparent.png
+   :width: 300
+
+
+How to use ChemPrice
 ===================
 
 ChemPrices is a computer tool that allows retrieving the prices of molecules 
