@@ -4,23 +4,3 @@ requires = [
     "wheel"
 ]
 build-backend = "setuptools.build_meta"
-
-[project]
-name = "ChemPrice"
-authors = [{name = "Saliou", email = "baptiste.saliou@etu.unistra.fr"}]
-dynamic = ["version", "description"]
-
-[project]
-name = "ChemPrice"
-version = "0.0.1"
-authors = [
-    {name = "Saliou", email = "baptiste.saliou@etu.unistra.fr"}
-]
-description = "Chemical Price Search Tool"
-readme = "README.md"
-requires-python = ">=3.8"
-classifiers = [
-    "Programming Language :: Python :: 3",
-    "License :: OSI Approved :: MIT License",
-    "Operating System :: OS Independent",
-]

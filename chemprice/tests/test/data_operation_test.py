@@ -7,7 +7,7 @@ import numpy as np
 from .. import Utils
 
 # Add path
-sys.path.insert(0, os.path.abspath('../chemprice'))
+sys.path.insert(0, os.path.abspath('..'))
 from chemprice import utils
 
 

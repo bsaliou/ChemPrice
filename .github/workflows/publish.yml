@@ -12,18 +12,25 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v3
+
       - name: Set up Python
-        uses: actions/setup-python@v3
+        uses: actions/setup-python@v2
         with:
-          python-version: "3.x"
-      - name: Install library for testing
-        run: |
-          pip install coveralls
-          pip install .
-      - name: Run Tests
-        run: |
-          pytest --pyargs chemprice
+          python-version: 3.x
+
+      - name: Install dependencies
+        run: pip install -r tests/requirements.txt
+
+      - name: Run tests
+        run: pytest --rootdir=tests/ --junitxml=test-results.xml
+
+      - name: Upload test results
+        uses: actions/upload-artifact@v2
+        with:
+          name: Test Results
+          path: test-results.xml
 
   Build-n-Publish:
     name: Build and publish Python 🐍 distributions 📦 to PyPI and TestPyPI
@@ -43,11 +50,9 @@ jobs:
           pip install build
       - name: Build package
         run: python -m build
+
       - name: Publish package
-        uses: pypa/gh-action-pypi-publish@
+        uses: pypa/gh-action-pypi-publish@main # Utilisez la dernière version stable
         with:
           user: __token__
           password: ${{ secrets.PYPI_API_TOKEN }}
-
-      - name: Remove Conda environment
-        run: conda deactivate && conda env remove -n test -y
