@@ -22,10 +22,10 @@ jobs:
           python-version: 3.x
 
       - name: Install dependencies
-        run: pip install -r tests/requirements.txt
+        run: pip install -r chemprice/tests/requirements.txt
 
       - name: Run tests
-        run: pytest --rootdir=tests/ --junitxml=test-results.xml
+        run: pytest --rootdir=chemprice/tests/ --junitxml=test-results.xml
 
       - name: Upload test results
         uses: actions/upload-artifact@v2
