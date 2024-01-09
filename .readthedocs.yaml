@@ -12,6 +12,11 @@ sphinx:
 # Optionally set the version of Python and requirements required to build your docs
 python:
    version: 3.7
+  
+build:
+  os: ubuntu-20.04  # <- add this line
+  tools:
+    python: "3.10"
 
 formats:
   - epub
