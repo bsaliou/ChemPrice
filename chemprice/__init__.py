@@ -1,0 +1,1 @@
+from .chemprice import PriceCollector
