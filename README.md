@@ -1,7 +1,11 @@
-
 <p align="center">
   <img src="logo/logo_chemprice_transparant.png" alt="Nom de l'image" width="500">
 </p>
+
+<p align="center">
+  <img width="600" src="https://raw.githubusercontent.com/mcsorkun/ChemPrice/logo/logo_chemprice_transparant.png*">
+</p>
+<br />
 
 # ChemPrice
 
@@ -31,16 +35,16 @@ running:
 ### Getting started
 
 ChemPrice requires a list of molecule SMILES as the representation of molecules:
-  
+
 ```python
 smiles_list = ["CC(=O)NC1=CC=C(C=C1)O", "CC(C)CC1=CC=C(C=C1)C(C)C(=O)O", "O=C(C)Oc1ccccc1C(=O)O"]
 ```
 
-First, we need to create an instance from the PriceCollector class. Using this instance,  we'll be able to connect to the various integrators and then launch a search
+First, we need to create an instance from the PriceCollector class. Using this instance, we'll be able to connect to the various integrators and then launch a search
 on the list of smiles entered.
 
 ```python
-from chemiprice import PriceCollector 
+from chemiprice import PriceCollector
 pc = PriceCollector()
 ```
 
@@ -56,7 +60,7 @@ which will take you back to their sites where you can request an API key.
 
 ### Set the API key for each integrator
 
-Now, an instance from the ``PriceCollector`` class has been created, we need to connect to one
+Now, an instance from the `PriceCollector` class has been created, we need to connect to one
 or more integrators via an API key.
 
 Connection to Molport via API key:
@@ -66,7 +70,6 @@ pc.setMolportApiKey("880d8343-8ui2-418c-9g7a-68b4e2e78c8b")
 ```
 
 In the case of Molport, it's also possible to log in with a login and password.
-
 
 ```python
 pc.setMolportUsername("john.spade")
@@ -131,7 +134,7 @@ all_prices = pc.collect()
 The output will be a dataframe containing all price information about the molecule.
 
 | Input Smiles          | Source  | Supplier Name         | Purity | Amount | Measure | Price_USD |
-|-----------------------|---------|-----------------------|--------|--------|---------|-----------|
+| --------------------- | ------- | --------------------- | ------ | ------ | ------- | --------- |
 | CC(=O)NC1=CC=C(C=C1)O | Molport | "ChemDiv, Inc."       | >90    | 100    | mg      | 407.1     |
 | CC(=O)NC1=CC=C(C=C1)O | Molport | MedChemExpress Europe | 98.83  | 10     | g       | 112.8     |
 | CC(=O)NC1=CC=C(C=C1)O | Molport | TargetMol Chemicals   | 100.0  | 500    | mg      | 50.0      |
@@ -147,7 +150,7 @@ pc.selectBest(all_prices)
 The output will be a dataframe containing only the best quantity/price ratio of each molecule.
 
 | Input Smiles          | Source  | Supplier Name       | Purity | Amount | Measure  | Price_USD | USD/g  | USD/mol            |
-|-----------------------|---------|---------------------|--------|--------|----------|-----------|--------|--------------------|
+| --------------------- | ------- | ------------------- | ------ | ------ | -------- | --------- | ------ | ------------------ |
 | CC(=O)NC1=CC=C(C=C1)O | Molport | Cayman Europe       | >=98   | 500    | g        | 407.1     | 0.22   |                    |
 | O=C(C)Oc1ccccc1C(=O)O | Molport | Cayman Europe       | >=90   | 500    | g        | 112.8     | 0.1606 |                    |
 | O=C(C)Oc1ccccc1C(=O)O | Molport | Life Chemicals Inc. | >90    | 20     | micromol | 50.0      |        | 3950000.0000000005 |

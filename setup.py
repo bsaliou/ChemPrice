@@ -14,7 +14,7 @@ setup(
     url="https://github.com/bsaliou/ChemPrice",
     project_urls={
         "Bug Tracker": "https://github.com/bsaliou/ChemPrice/issues",
-	"Documentation": "https://chemplot.readthedocs.io/en/latest/"
+	    "Documentation": "https://chemplot.readthedocs.io/en/latest/"
     },
     license="BSD",
     packages=["chemprice", "chemprice.tests"],
@@ -42,6 +42,6 @@ setup(
     "pytest>=7.0.0",
     ],
     include_package_data=True,
-    package_data={'': 'tests': ['data/*.csv']},
+    package_data={'tests': ['data/*.csv']},
     python_requires='>=3.6',
 )
