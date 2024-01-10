@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name="chemprice", 
-    version="1.0.4",
+    version="1.1.0",
     author="Baptiste SALIOU",
     author_email="baptiste1saliou@gmail.com",
     description="A python library for chemical price Search.",
@@ -13,6 +13,7 @@ setup(
     long_description_content_type="text/markdown",
     url="https://github.com/bsaliou/ChemPrice",
     project_urls={
+        "Interface": "https://chemprice.streamlit.app/",
 	    "Documentation": "https://chemprice.readthedocs.io/en/latest/"
     },
     license="BSD",

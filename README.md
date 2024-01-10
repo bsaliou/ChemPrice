@@ -1,13 +1,7 @@
 <p align="center">
-  <img src="logo/logo_chemprice_transparant.png" alt="Nom de l'image" width="500">
-</p>
-
-<p align="center">
   <img width="600" src="https://i.imgur.com/UHf6OV0.png">
 </p>
 <br />
-
-https://github.com/bsaliou/ChemPrice/blob/e4737c0be63c06fac0e539dc75a30ee027ed486c/logo/logo_chemprice_transparant.png
 
 # ChemPrice
 
