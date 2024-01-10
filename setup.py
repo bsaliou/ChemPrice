@@ -38,7 +38,7 @@ setup(
     ],
     test_suite="pytest",
     tests_require=[
-    "pytest>=7.0.0",
+        "pytest>=7.0.0",
     ],
     include_package_data=True,
     package_data={'tests': ['data/*.csv'], '..': ['logo/*.png']},
