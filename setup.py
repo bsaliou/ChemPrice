@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name="chemprice", 
-    version="1.0.1",
+    version="1.0.2",
     author="Baptiste SALIOU, Murat Cihan Sorkun, Suleyman Er",
     author_email="baptiste1saliou@gmail.com, mcsorkun@gmail.com",
     description="A python library for chemical price Search.",
