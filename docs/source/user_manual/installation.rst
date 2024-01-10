@@ -36,7 +36,7 @@ If ChemPrice is installed correctly you can also test the package by running:
 .. code-block:: bash
 
     ~$ pip install pytest
-    ~$ pytest test/
+    ~$ pytest chemprice/tests/
 
 
     

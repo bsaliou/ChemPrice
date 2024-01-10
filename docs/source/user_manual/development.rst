@@ -35,4 +35,4 @@ To run the unit tests for ChemPrice use this command:
 
 .. code-block:: bash
 
-    ~$ pytest test/
+    ~$ pytest chemprice/tests/
