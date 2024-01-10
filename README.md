@@ -3,11 +3,9 @@
 </p>
 
 <p align="center">
-  <img width="600" src="https://raw.githubusercontent.com/mcsorkun/ChemPrice/logo/logo_chemprice_transparant.png">
+  <img width="600" src="https://github.com/bsaliou/ChemPrice/blob/main/logo/logo_chemprice_transparant.png">
 </p>
 <br />
-
-https://github.com/bsaliou/ChemPrice/blob/main/logo/logo_chemprice_transparant.png
 
 # ChemPrice
 
