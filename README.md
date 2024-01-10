@@ -1,8 +1,4 @@
 <p align="center">
-  <img src="logo/logo_chemprice_transparant.png" alt="Nom de l'image" width="500">
-</p>
-
-<p align="center">
   <img width="600" src="https://github.com/bsaliou/ChemPrice/blob/main/logo/logo_chemprice_transparant.png">
 </p>
 <br />
