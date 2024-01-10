@@ -5,9 +5,9 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name="chemprice", 
-    version="1.0.2",
-    author="Baptiste SALIOU, Murat Cihan Sorkun, Suleyman Er",
-    author_email="baptiste1saliou@gmail.com, mcsorkun@gmail.com",
+    version="1.0.4",
+    author="Baptiste SALIOU",
+    author_email="baptiste1saliou@gmail.com",
     description="A python library for chemical price Search.",
     long_description=long_description,
     long_description_content_type="text/markdown",
@@ -16,14 +16,11 @@ setup(
 	    "Documentation": "https://chemprice.readthedocs.io/en/latest/"
     },
     license="BSD",
-    packages=["chemprice", "chemprice.tests"],
+    packages=["chemprice", "chemprice.tests", "."],
     classifiers=[
         "Intended Audience :: Science/Research",
         "Intended Audience :: Developers",
         "Programming Language :: Python",
-        "Programming Language :: Python :: 3",
-        "Programming Language :: Python :: 3.6",
-        "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
         "License :: OSI Approved :: BSD License",
         "Operating System :: OS Independent",
@@ -41,6 +38,6 @@ setup(
         "pytest>=7.0.0",
     ],
     include_package_data=True,
-    package_data={'tests': ['data/*.csv'], '..': ['logo/*.png']},
+    package_data={'tests': ['data/*.csv'], '': ['logo/*.png']},
     python_requires='>=3.6',
 )

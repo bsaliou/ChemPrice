@@ -2,6 +2,13 @@
   <img src="logo/logo_chemprice_transparant.png" alt="Nom de l'image" width="500">
 </p>
 
+<p align="center">
+  <img width="600" src="https://i.imgur.com/UHf6OV0.png">
+</p>
+<br />
+
+https://github.com/bsaliou/ChemPrice/blob/e4737c0be63c06fac0e539dc75a30ee027ed486c/logo/logo_chemprice_transparant.png
+
 # ChemPrice
 
 ChemPrice is a software tool designed for the purpose of gathering pricing information for specific molecules. It is capable of retrieving price data from three different integration sources: Molport, ChemSpace, and MCule. To access these integrators, users must provide an API key for each one.
