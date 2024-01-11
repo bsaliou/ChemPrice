@@ -4,7 +4,7 @@ Installation
 Installing an official release
 ------------------------------
 
-There two different options you can follow to install ChemPlot.
+ChemPrice can be installed via PyPi.
     
 Use pip
 ^^^^^^^^^^^^^^^^^
