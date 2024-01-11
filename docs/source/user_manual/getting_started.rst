@@ -1,10 +1,7 @@
 How to use ChemPrice
 ===================
 
-ChemPrice is a computer tool that allows retrieving the prices of molecules 
-from their SMILES using various integrators. ChemPrice supports three 
-integrators: Molport, ChemSpace, and MCule. Each integrator requires an API 
-key to be used.
+ChemPrice is a software designed to simplify the gathering of pricing data from more than 100 suppliers by integrating with ChemSpace, Mcule, and Molport platforms. It ensures uniformity in pricing units, providing comprehensive and optimized pricing details for specified compounds.
 
 Getting started
 ---------------
