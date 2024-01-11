@@ -11,8 +11,7 @@ First, let's create a list of molecules in SMILES notation to be searched:
 
     smiles_list = ["CC(=O)NC1=CC=C(C=C1)O", "CC(C)CC1=CC=C(C=C1)C(C)C(=O)O", "O=C(C)Oc1ccccc1C(=O)O"]
 
-Next, create an instance from the PriceCollector class. Using this instance, 
- we'll be able to connect to the various integrators and then launch a search 
+Next, create an instance from the PriceCollector class. Using this instance,  we'll be able to connect to the various integrators and then launch a search 
 on the list of SMILES entered.
 
 .. code:: python3
