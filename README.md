@@ -5,7 +5,7 @@
 
 # ChemPrice
 
-ChemPrice is a software tool designed for the purpose of gathering pricing information for specific molecules. It is capable of retrieving price data from three different integration sources: Molport, ChemSpace, and MCule. To access these integrators, users must provide an API key for each one.
+ChemPrice is a software designed to simplify the gathering of pricing data from more than 100 suppliers by integrating with ChemSpace, Mcule, and Molport platforms. It ensures uniformity in pricing units, providing comprehensive and optimized pricing details for specified compounds.
 
 ## Resources
 
@@ -30,14 +30,13 @@ running:
 
 ### Getting started
 
-ChemPrice requires a list of molecule SMILES as the representation of molecules:
+First, let's create a list of molecules in SMILES notation to be searched:
 
 ```python
 smiles_list = ["CC(=O)NC1=CC=C(C=C1)O", "CC(C)CC1=CC=C(C=C1)C(C)C(=O)O", "O=C(C)Oc1ccccc1C(=O)O"]
 ```
 
-First, we need to create an instance from the PriceCollector class. Using this instance, we'll be able to connect to the various integrators and then launch a search
-on the list of smiles entered.
+Next, create an instance from the PriceCollector class. Using this instance, we'll be able to connect to the various integrators and then launch a search on the list of SMILES entered.
 
 ```python
 from chemiprice import PriceCollector
@@ -46,20 +45,19 @@ pc = PriceCollector()
 
 ### Request an API key
 
-To access integrators' data, you need to be able to connect to their API.
+To access integrators' data, we need to be able to connect to their API.
 
-If you don't have an API key yet, you can click on the following links :
+If you don't have an API key yet, you can request one via the following links:
 [Molport](https://www.molport.com/shop/user-api-keys),
 [ChemSpace](https://chem-space.com/contacts) and
-[MCule](https://mcule.com/contact/),
-which will take you back to their sites where you can request an API key.
+[MCule](https://mcule.com/contact/).
 
 ### Set the API key for each integrator
 
 Now, an instance from the `PriceCollector` class has been created, we need to connect to one
 or more integrators via an API key.
 
-Connection to Molport via API key:
+Connection to Molport via API key (the following credentials are examples from Molport API documentations, and users need to obtain their personal credentials from Molport platform):
 
 ```python
 pc.setMolportApiKey("880d8343-8ui2-418c-9g7a-68b4e2e78c8b")
@@ -117,14 +115,14 @@ Check: Molport API key is correct.
 Check: Molport API key is incorrect.
 ```
 
-If the identifiers checked are correct, then it's possible
-to run the method :mod:`collect()` to obtain all the information
-found on the molecule. The price is given in USD according to
+If the credentials checked are correct, then it's possible
+to run the method :mod:`collect()` to obtain the price information
+found for the molecules. The prices are given in USD according to
 the units and quantity entered by the vendor. The units of measurement
 for quantities are categorized into three families: mols, grams, and liters.
 
 ```python
-all_prices = pc.collect()
+all_prices = pc.collect(smiles_list)
 ```
 
 The output will be a dataframe containing all price information about the molecule.
@@ -135,9 +133,8 @@ The output will be a dataframe containing all price information about the molecu
 | CC(=O)NC1=CC=C(C=C1)O | Molport | MedChemExpress Europe | 98.83  | 10     | g       | 112.8     |
 | CC(=O)NC1=CC=C(C=C1)O | Molport | TargetMol Chemicals   | 100.0  | 500    | mg      | 50.0      |
 
-With the :mod:`selectBest()` function, you can keep only the best prices for each molecule.
-In fact, for each unit of measurement (mol gram and liter) the results are compared
-to find the best quantity/price ratio.
+With the :mod:`selectBest()` function,  we can select the best prices for each molecule. In fact, for each 
+unit of measurement (mol, gram, and liter) the results are calculated separately to find the best quantity/price ratio.
 
 ```python
 pc.selectBest(all_prices)
@@ -153,6 +150,7 @@ The output will be a dataframe containing only the best quantity/price ratio of 
 
 ### Contact
 
-For any question you can contact us through email:
+For any questions you can contact us through email:
 
 - [Baptiste Saliou](mailto:baptiste1saliou@gmail.com)
+- [Murat Cihan Sorkun](mailto:mcsorkun@gmail.com)
