@@ -57,7 +57,7 @@ If you don't have an API key yet, you can request one via the following links:
 Now, an instance from the `PriceCollector` class has been created, we need to connect to one
 or more integrators via an API key.
 
-Connection to Molport via API key:
+Connection to Molport via API key (the following credentials are examples from Molport API documentations, and users need to obtain their personal credentials from Molport platform):
 
 ```python
 pc.setMolportApiKey("880d8343-8ui2-418c-9g7a-68b4e2e78c8b")
