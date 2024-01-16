@@ -36,7 +36,7 @@ Enter the API key for each integrator
 Now that the ``PriceCollector`` class has been created, we need to connect to one 
 or more integrators via an API key. 
 
-Connection to Molport via API key: 880d8343-8ui2-418c-9g7a-68b4e2e78c8b
+Connection to Molport via API key (the following credentials are examples from Molport API documentations, and users need to obtain their personal credentials from Molport platform):
 
 .. code:: python3
     
